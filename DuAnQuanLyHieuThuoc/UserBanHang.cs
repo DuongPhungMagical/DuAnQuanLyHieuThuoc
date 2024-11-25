@@ -105,6 +105,7 @@ namespace DuAnQuanLyHieuThuoc
             public int SoLuong { get; set; }
             public float TongTien { get; set; }
         }
+        // du na 
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
