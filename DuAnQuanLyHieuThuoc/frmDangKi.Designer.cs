@@ -55,9 +55,10 @@
             btnDangKi.FlatStyle = FlatStyle.Flat;
             btnDangKi.Font = new Font("Arial", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDangKi.ForeColor = Color.Blue;
-            btnDangKi.Location = new Point(204, 672);
+            btnDangKi.Location = new Point(214, 577);
+            btnDangKi.Margin = new Padding(2, 2, 2, 2);
             btnDangKi.Name = "btnDangKi";
-            btnDangKi.Size = new Size(292, 68);
+            btnDangKi.Size = new Size(180, 42);
             btnDangKi.TabIndex = 9;
             btnDangKi.Text = "Register";
             btnDangKi.UseVisualStyleBackColor = false;
@@ -66,9 +67,10 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.icons8_password_100;
-            pictureBox3.Location = new Point(30, 436);
+            pictureBox3.Location = new Point(110, 417);
+            pictureBox3.Margin = new Padding(2, 2, 2, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(100, 69);
+            pictureBox3.Size = new Size(71, 43);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 17;
             pictureBox3.TabStop = false;
@@ -76,9 +78,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.icons8_user_100;
-            pictureBox2.Location = new Point(30, 320);
+            pictureBox2.Location = new Point(110, 326);
+            pictureBox2.Margin = new Padding(2, 2, 2, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(115, 110);
+            pictureBox2.Size = new Size(71, 69);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 16;
             pictureBox2.TabStop = false;
@@ -86,26 +89,29 @@
             // panel2
             // 
             panel2.BackColor = Color.MediumAquamarine;
-            panel2.Location = new Point(151, 488);
+            panel2.Location = new Point(185, 450);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(401, 5);
+            panel2.Size = new Size(294, 3);
             panel2.TabIndex = 15;
             // 
             // txtMatKhau
             // 
             txtMatKhau.Font = new Font("Segoe UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtMatKhau.ForeColor = SystemColors.WindowText;
-            txtMatKhau.Location = new Point(151, 436);
+            txtMatKhau.Location = new Point(185, 417);
+            txtMatKhau.Margin = new Padding(2, 2, 2, 2);
             txtMatKhau.Name = "txtMatKhau";
-            txtMatKhau.Size = new Size(401, 57);
+            txtMatKhau.Size = new Size(295, 38);
             txtMatKhau.TabIndex = 14;
             // 
             // panel1
             // 
             panel1.BackColor = Color.MediumAquamarine;
-            panel1.Location = new Point(151, 398);
+            panel1.Location = new Point(185, 376);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(401, 5);
+            panel1.Size = new Size(295, 3);
             panel1.TabIndex = 13;
             // 
             // label1
@@ -114,9 +120,10 @@
             label1.BackColor = SystemColors.Control;
             label1.Font = new Font("Arial", 28.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.MediumAquamarine;
-            label1.Location = new Point(168, 216);
+            label1.Location = new Point(195, 237);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(338, 88);
+            label1.Size = new Size(212, 55);
             label1.TabIndex = 12;
             label1.Text = "Register";
             // 
@@ -124,17 +131,19 @@
             // 
             txtTaiKhoan.Font = new Font("Segoe UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtTaiKhoan.ForeColor = SystemColors.WindowText;
-            txtTaiKhoan.Location = new Point(151, 346);
+            txtTaiKhoan.Location = new Point(185, 343);
+            txtTaiKhoan.Margin = new Padding(2, 2, 2, 2);
             txtTaiKhoan.Name = "txtTaiKhoan";
-            txtTaiKhoan.Size = new Size(401, 57);
+            txtTaiKhoan.Size = new Size(296, 38);
             txtTaiKhoan.TabIndex = 11;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.icons8_login_100;
-            pictureBox1.Location = new Point(245, 25);
+            pictureBox1.Location = new Point(227, 65);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(181, 168);
+            pictureBox1.Size = new Size(156, 158);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
@@ -142,9 +151,10 @@
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.icons8_password_100;
-            pictureBox4.Location = new Point(30, 525);
+            pictureBox4.Location = new Point(110, 473);
+            pictureBox4.Margin = new Padding(2, 2, 2, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(100, 69);
+            pictureBox4.Size = new Size(71, 43);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 20;
             pictureBox4.TabStop = false;
@@ -152,18 +162,20 @@
             // panel3
             // 
             panel3.BackColor = Color.MediumAquamarine;
-            panel3.Location = new Point(151, 577);
+            panel3.Location = new Point(185, 506);
+            panel3.Margin = new Padding(2, 2, 2, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(401, 5);
+            panel3.Size = new Size(294, 3);
             panel3.TabIndex = 19;
             // 
             // txtXacNhan
             // 
             txtXacNhan.Font = new Font("Segoe UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtXacNhan.ForeColor = SystemColors.WindowText;
-            txtXacNhan.Location = new Point(151, 525);
+            txtXacNhan.Location = new Point(185, 473);
+            txtXacNhan.Margin = new Padding(2, 2, 2, 2);
             txtXacNhan.Name = "txtXacNhan";
-            txtXacNhan.Size = new Size(401, 57);
+            txtXacNhan.Size = new Size(295, 38);
             txtXacNhan.TabIndex = 18;
             txtXacNhan.Click += txtXacNhan_Click;
             txtXacNhan.Leave += txtXacNhan_Leave;
@@ -175,25 +187,27 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Segoe UI", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Red;
-            label2.Location = new Point(613, 761);
+            label2.Location = new Point(553, 720);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(67, 40);
+            label2.Size = new Size(45, 25);
             label2.TabIndex = 23;
             label2.Text = "Exit";
             // 
             // cbVaiTro
             // 
             cbVaiTro.FormattingEnabled = true;
-            cbVaiTro.Location = new Point(310, 597);
+            cbVaiTro.Location = new Point(331, 528);
+            cbVaiTro.Margin = new Padding(2, 2, 2, 2);
             cbVaiTro.Name = "cbVaiTro";
-            cbVaiTro.Size = new Size(242, 40);
+            cbVaiTro.Size = new Size(150, 28);
             cbVaiTro.TabIndex = 24;
             // 
             // frmDangKi
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(684, 810);
+            ClientSize = new Size(609, 754);
             Controls.Add(cbVaiTro);
             Controls.Add(label2);
             Controls.Add(pictureBox4);
@@ -209,6 +223,7 @@
             Controls.Add(txtTaiKhoan);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "frmDangKi";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmDangKi";

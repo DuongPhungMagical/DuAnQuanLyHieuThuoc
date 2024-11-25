@@ -47,10 +47,6 @@ namespace DuAnQuanLyHieuThuoc
 
         }
 
-        private void txtSoLuong_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         //Khoi tao gio hang
         List<CartItem> cart = new List<CartItem>();
 
@@ -72,23 +68,26 @@ namespace DuAnQuanLyHieuThuoc
                     float totalPrice = unitPrice * quantity;
 
                     // Kiểm tra thuốc đã có trong giỏ chưa
-                    var existingItem = cart.FirstOrDefault(c => c.DrugName == drugName);
+                    var existingItem = cart.FirstOrDefault(c => c.TenThuoc == drugName);
                     if (existingItem != null)
                     {
                         // Cập nhật số lượng và tổng tiền cho mặt hàng đã có
-                        existingItem.Quantity += quantity;
-                        existingItem.TotalPrice = existingItem.Quantity * unitPrice;
+                        existingItem.SoLuong += quantity;
+                        existingItem.TongTien = existingItem.TongTien * unitPrice;
                     }
                     else
                     {
-                        cart.Add(new CartItem { DrugName = drugName, UnitPrice = unitPrice, Quantity = quantity, TotalPrice = totalPrice });
+                        cart.Add(new CartItem { TenThuoc = drugName, DonGia = unitPrice, SoLuong = quantity, TongTien = totalPrice });
                     }
 
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = cart;
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
 
                     // Tính tổng tiền giỏ hàng
-                    txtTongTien.Text = cart.Sum(item => item.TotalPrice).ToString();
+                    txtTongTien.Text = cart.Sum(item => item.TongTien).ToString();
                 }
 
             }
@@ -101,29 +100,64 @@ namespace DuAnQuanLyHieuThuoc
         //dinh nghia gio hang
         public class CartItem
         {
-            public string DrugName { get; set; }
-            public float UnitPrice { get; set; }
-            public int Quantity { get; set; }
-            public float TotalPrice { get; set; }
+            public string TenThuoc { get; set; }
+            public float DonGia { get; set; }
+            public int SoLuong { get; set; }
+            public float TongTien { get; set; }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string tenThuoc = txtTenThuoc.Text;
-            var check = cart.FirstOrDefault(x => x.DrugName == tenThuoc);
+            var check = cart.FirstOrDefault(x => x.TenThuoc == tenThuoc);
             cart.Remove(check);
             dataGridView1.DataSource = null;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.DataSource = cart;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0 && e.RowIndex < cart.Count)
+            if (e.RowIndex >= 0 && e.RowIndex < cart.Count)
             {
                 txtTenThuoc.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 txtDonGia.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txtSoLuong.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txtTongTien.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            }
+        }
+
+        private void bntTaoHoaDon_Click(object sender, EventArgs e)
+        {
+            frmTrangChuNhanVien frm = (frmTrangChuNhanVien)Application.OpenForms["frmTrangChuNhanVien"];
+
+            if (frm != null)
+            {
+                // Kiểm tra nếu UserThanhToan đã được mở, nếu chưa thì tạo mới
+                UserThanhToan tt = frm.Controls.OfType<UserThanhToan>().FirstOrDefault();
+
+                if (tt == null)
+                {
+                    tt = new UserThanhToan();
+                    frm.ShowChucNang(tt);  // Đảm bảo form chính hiển thị UserThanhToan
+                }
+
+                // Truyền tổng tiền từ form bán hàng vào UserThanhToan
+                tt.SetSoTien(float.Parse(txtTongTien.Text));
+            }
+            else
+            {
+                MessageBox.Show("Form chính chưa được mở.");
+            }
+
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            var check = _context.KhachHangs.FirstOrDefault(x => x.SoDienThoai == txtSDT.Text);
+            if (check != null)
+            {
+                txtTenKH.Text = check.TenKhachHang.ToString();
             }
         }
     }

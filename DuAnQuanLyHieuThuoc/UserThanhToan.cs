@@ -100,5 +100,10 @@ namespace DuAnQuanLyHieuThuoc
                 MessageBox.Show("Đã xảy ra lỗi khi tải danh sách ngân hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public void SetSoTien(float soTien)
+        {
+            txtSoTien.Text = soTien.ToString();
+        }
+
     }
 }

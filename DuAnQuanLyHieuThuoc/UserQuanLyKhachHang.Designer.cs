@@ -55,9 +55,10 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Arial", 9F, FontStyle.Bold);
-            label12.Location = new Point(94, 354);
+            label12.Location = new Point(68, 328);
+            label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
-            label12.Size = new Size(188, 29);
+            label12.Size = new Size(114, 18);
             label12.TabIndex = 79;
             label12.Text = "Mã khách hàng";
             // 
@@ -65,17 +66,19 @@
             // 
             lblMa.AutoSize = true;
             lblMa.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMa.Location = new Point(94, 383);
+            lblMa.Location = new Point(68, 346);
+            lblMa.Margin = new Padding(2, 0, 2, 0);
             lblMa.Name = "lblMa";
-            lblMa.Size = new Size(48, 45);
+            lblMa.Size = new Size(29, 28);
             lblMa.TabIndex = 78;
             lblMa.Text = "Id";
             // 
             // btnCapNhat
             // 
-            btnCapNhat.Location = new Point(410, 1088);
+            btnCapNhat.Location = new Point(650, 999);
+            btnCapNhat.Margin = new Padding(2, 2, 2, 2);
             btnCapNhat.Name = "btnCapNhat";
-            btnCapNhat.Size = new Size(244, 63);
+            btnCapNhat.Size = new Size(150, 39);
             btnCapNhat.TabIndex = 74;
             btnCapNhat.Text = "Cập nhật";
             btnCapNhat.UseVisualStyleBackColor = true;
@@ -83,10 +86,11 @@
             // 
             // txtTimKiem
             // 
-            txtTimKiem.Font = new Font("Segoe UI", 7.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTimKiem.Location = new Point(304, 450);
+            txtTimKiem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTimKiem.Location = new Point(567, 400);
+            txtTimKiem.Margin = new Padding(2, 2, 2, 2);
             txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.Size = new Size(350, 35);
+            txtTimKiem.Size = new Size(233, 34);
             txtTimKiem.TabIndex = 71;
             txtTimKiem.MouseClick += txtTimKiem_MouseClick;
             txtTimKiem.Leave += txtTimKiem_Leave;
@@ -95,9 +99,10 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 9F, FontStyle.Bold);
-            label8.Location = new Point(3, 456);
+            label8.Location = new Point(33, 416);
+            label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(275, 29);
+            label8.Size = new Size(167, 18);
             label8.TabIndex = 65;
             label8.Text = "Danh sách khách hàng";
             // 
@@ -105,9 +110,10 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9F, FontStyle.Bold);
-            label5.Location = new Point(571, 144);
+            label5.Location = new Point(492, 131);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(63, 29);
+            label5.Size = new Size(39, 18);
             label5.TabIndex = 62;
             label5.Text = "Tuổi";
             // 
@@ -115,9 +121,10 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 9F, FontStyle.Bold);
-            label4.Location = new Point(94, 144);
+            label4.Location = new Point(68, 132);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(197, 29);
+            label4.Size = new Size(121, 18);
             label4.TabIndex = 61;
             label4.Text = "Tên khách hàng";
             // 
@@ -125,9 +132,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9F, FontStyle.Bold);
-            label3.Location = new Point(94, 243);
+            label3.Location = new Point(68, 234);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(166, 29);
+            label3.Size = new Size(101, 18);
             label3.TabIndex = 60;
             label3.Text = "Số điện thoại";
             // 
@@ -135,9 +143,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 9F, FontStyle.Bold);
-            label2.Location = new Point(571, 254);
+            label2.Location = new Point(492, 234);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(92, 29);
+            label2.Size = new Size(56, 18);
             label2.TabIndex = 59;
             label2.Text = "Địa chỉ";
             // 
@@ -145,9 +154,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(59, 23);
+            label1.Location = new Point(36, 14);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(374, 44);
+            label1.Size = new Size(242, 29);
             label1.TabIndex = 58;
             label1.Text = "Quản lý khách hàng";
             // 
@@ -156,14 +166,15 @@
             txtTenKhachHang.Font = new Font("Segoe UI", 12F);
             txtTenKhachHang.Location = new Point(230, 257);
             txtTenKhachHang.Name = "txtTenKhachHang";
-            txtTenKhachHang.Size = new Size(403, 50);
+            txtTenKhachHang.Size = new Size(403, 34);
             txtTenKhachHang.TabIndex = 53;
             // 
             // btnThem
             // 
-            btnThem.Location = new Point(3, 1088);
+            btnThem.Location = new Point(34, 999);
+            btnThem.Margin = new Padding(2, 2, 2, 2);
             btnThem.Name = "btnThem";
-            btnThem.Size = new Size(240, 63);
+            btnThem.Size = new Size(148, 39);
             btnThem.TabIndex = 80;
             btnThem.Text = "Thêm khách hàng";
             btnThem.UseVisualStyleBackColor = true;
@@ -171,68 +182,75 @@
             // 
             // txtTuoi
             // 
-            txtTuoi.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTuoi.Location = new Point(571, 176);
+            txtTuoi.Font = new Font("Arial", 16.2F);
+            txtTuoi.Location = new Point(492, 152);
+            txtTuoi.Margin = new Padding(2, 2, 2, 2);
             txtTuoi.Name = "txtTuoi";
-            txtTuoi.Size = new Size(363, 44);
+            txtTuoi.Size = new Size(322, 39);
             txtTuoi.TabIndex = 82;
             // 
             // txtDiaChi
             // 
-            txtDiaChi.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDiaChi.Location = new Point(571, 286);
+            txtDiaChi.Font = new Font("Arial", 16.2F);
+            txtDiaChi.Location = new Point(492, 254);
+            txtDiaChi.Margin = new Padding(2, 2, 2, 2);
             txtDiaChi.Name = "txtDiaChi";
-            txtDiaChi.Size = new Size(363, 44);
+            txtDiaChi.Size = new Size(322, 39);
             txtDiaChi.TabIndex = 84;
             // 
             // txtSDT
             // 
-            txtSDT.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSDT.Location = new Point(94, 275);
+            txtSDT.Font = new Font("Arial", 16.2F);
+            txtSDT.Location = new Point(68, 254);
+            txtSDT.Margin = new Padding(2, 2, 2, 2);
             txtSDT.Name = "txtSDT";
-            txtSDT.Size = new Size(363, 44);
+            txtSDT.Size = new Size(321, 39);
             txtSDT.TabIndex = 85;
             // 
             // txtTen
             // 
-            txtTen.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTen.Location = new Point(94, 176);
+            txtTen.Font = new Font("Arial", 16.2F);
+            txtTen.Location = new Point(68, 152);
+            txtTen.Margin = new Padding(2, 2, 2, 2);
             txtTen.Name = "txtTen";
-            txtTen.Size = new Size(363, 44);
+            txtTen.Size = new Size(321, 39);
             txtTen.TabIndex = 86;
             // 
             // dgvDanhSach
             // 
             dgvDanhSach.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDanhSach.Location = new Point(3, 498);
+            dgvDanhSach.Location = new Point(33, 442);
+            dgvDanhSach.Margin = new Padding(2, 2, 2, 2);
             dgvDanhSach.Name = "dgvDanhSach";
             dgvDanhSach.RowHeadersWidth = 82;
-            dgvDanhSach.Size = new Size(651, 584);
+            dgvDanhSach.Size = new Size(767, 543);
             dgvDanhSach.TabIndex = 87;
             dgvDanhSach.CellClick += dgvDanhSach_CellClick;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(672, 498);
+            dataGridView1.Location = new Point(841, 442);
+            dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 82;
-            dataGridView1.Size = new Size(667, 584);
+            dataGridView1.Size = new Size(604, 543);
             dataGridView1.TabIndex = 88;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Arial", 9F, FontStyle.Bold);
-            label13.Location = new Point(672, 454);
+            label13.Location = new Point(841, 419);
+            label13.Margin = new Padding(2, 0, 2, 0);
             label13.Name = "label13";
-            label13.Size = new Size(221, 29);
+            label13.Size = new Size(133, 18);
             label13.TabIndex = 89;
             label13.Text = "Lịch sử mua hàng";
             // 
             // UserQuanLyKhachHang
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label13);
             Controls.Add(dataGridView1);
@@ -252,8 +270,9 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "UserQuanLyKhachHang";
-            Size = new Size(1342, 1206);
+            Size = new Size(1462, 1072);
             Load += UserQuanLyKhachHang_Load;
             ((System.ComponentModel.ISupportInitialize)dgvDanhSach).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

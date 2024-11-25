@@ -16,7 +16,7 @@ namespace DuAnQuanLyHieuThuoc
         {
             InitializeComponent();
         }
-        private void ShowChucNang(UserControl userControl)
+        public void ShowChucNang(UserControl userControl)
         {
             pnShow.Controls.Clear();
             userControl.Dock = DockStyle.Fill;
@@ -31,6 +31,16 @@ namespace DuAnQuanLyHieuThuoc
         private void btnQuanLyThuoc_Click(object sender, EventArgs e)
         {
             ShowChucNang(new UserQuanLyKhachHang());
+        }
+
+        private void btnQuanLyNhapKho_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnShow_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

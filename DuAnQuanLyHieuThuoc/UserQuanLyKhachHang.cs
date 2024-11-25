@@ -183,5 +183,10 @@ namespace DuAnQuanLyHieuThuoc
                 }
             }
         }
+        public void ABC()
+        {
+         // dit me git
+            DataTable dt = new DataTable();
+        }
     }
 }
