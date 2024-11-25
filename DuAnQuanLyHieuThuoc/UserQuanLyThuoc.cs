@@ -21,14 +21,17 @@ namespace DuAnQuanLyHieuThuoc
             InitializeComponent();
             _context = new DataContext();
         }
+
         private string textPlaceholder = "Tìm kiếm thuốc";
         private Color colorHolder = Color.Gray;
-        private void UserQuanLyThuoc_Load(object sender, EventArgs e)
+
+        private async void UserQuanLyThuoc_Load(object sender, EventArgs e)
         {
             SetPlaceholder();
-            ShowThuoc();
-            ShowLoaiHangNha();
+            await ShowThuocAsync();
+            await ShowLoaiHangNhaAsync();
         }
+
         private void SetPlaceholder()
         {
             txtTimKiem.Text = textPlaceholder;
@@ -51,9 +54,9 @@ namespace DuAnQuanLyHieuThuoc
             }
         }
 
-        private void ShowThuoc()
+        private async Task ShowThuocAsync()
         {
-            var showThuoc = _context.Thuocs
+            var showThuoc = await _context.Thuocs
                 .Join(_context.LoaiThuocs, thuoc => thuoc.IdLoaiThuoc, x => x.Id, (thuoc, x) => new { thuoc, x })
                 .Join(_context.HangSanXuats, a => a.thuoc.IdHangSanXuat, b => b.Id, (a, b) => new { a, b })
                 .Join(_context.NhaCungCaps, c => c.a.thuoc.IdNhaCungCap, z => z.Id, (c, z) => new
@@ -67,27 +70,30 @@ namespace DuAnQuanLyHieuThuoc
                     c.a.x.TenLoaiThuoc,
                     c.b.TenHangSanXuat,
                     z.TenNhaCungCap
-                }).ToList();
+                }).ToListAsync();
+
             dgvThuoc.DataSource = showThuoc;
             dgvThuoc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-        private void ShowLoaiHangNha()
+
+        private async Task ShowLoaiHangNhaAsync()
         {
-            var loai = _context.LoaiThuocs.ToList();
+            var loai = await _context.LoaiThuocs.ToListAsync();
             cbLoaiThuoc.DataSource = loai;
             cbLoaiThuoc.DisplayMember = "TenLoaiThuoc";
             cbLoaiThuoc.ValueMember = "Id";
 
-            var hang = _context.HangSanXuats.ToList();
+            var hang = await _context.HangSanXuats.ToListAsync();
             cbHangSanXuat.DataSource = hang;
             cbHangSanXuat.DisplayMember = "TenHangSanXuat";
             cbHangSanXuat.ValueMember = "Id";
 
-            var cc = _context.NhaCungCaps.ToList();
+            var cc = await _context.NhaCungCaps.ToListAsync();
             cbNhaCungCap.DataSource = cc;
             cbNhaCungCap.DisplayMember = "TenNhaCungCap";
             cbNhaCungCap.ValueMember = "Id";
         }
+
         private bool ValidateGiaTien(string giaBan)
         {
             if (double.TryParse(giaBan, out double result))
@@ -107,6 +113,7 @@ namespace DuAnQuanLyHieuThuoc
             MessageBox.Show("Số lượng tồn kho không hợp lệ", "Thông báo", MessageBoxButtons.OK);
             return false;
         }
+
         private bool ValidateTenDonViGMoTa()
         {
             if (string.IsNullOrWhiteSpace(txtTenThuoc.Text) || string.IsNullOrEmpty(txtDonViTinh.Text) || string.IsNullOrWhiteSpace(txtMoTa.Text))
@@ -117,15 +124,9 @@ namespace DuAnQuanLyHieuThuoc
             return true;
         }
 
-        private void btnThemThuoc_Click(object sender, EventArgs e)
+        private async void btnThemThuoc_Click(object sender, EventArgs e)
         {
-            // Kiểm tra các trường thông tin cần thiết
-            if (!ValidateTenDonViGMoTa())
-            {
-                return;
-            }
-
-            if (!ValidateGiaTien(txtGiaBan.Text) || !ValidateSltk(txtSoLuongTonKho.Text))
+            if (!ValidateTenDonViGMoTa() || !ValidateGiaTien(txtGiaBan.Text) || !ValidateSltk(txtSoLuongTonKho.Text))
             {
                 return;
             }
@@ -138,63 +139,53 @@ namespace DuAnQuanLyHieuThuoc
                 HanSuDung = dtpHanSuDung.Value,
                 IdLoaiThuoc = (int)cbLoaiThuoc.SelectedValue,
                 IdNhaCungCap = (int)cbNhaCungCap.SelectedValue,
-                IdHangSanXuat = (int)cbHangSanXuat.SelectedValue
+                IdHangSanXuat = (int)cbHangSanXuat.SelectedValue,
+                GiaBan = double.Parse(txtGiaBan.Text),
+                SoLuongTonKho = int.Parse(txtSoLuongTonKho.Text)
             };
-            // Gán giá trị cho GiaBan và SoLuongTonKho nếu hợp lệ
-            thuoc.GiaBan = double.Parse(txtGiaBan.Text);
-            thuoc.SoLuongTonKho = int.Parse(txtSoLuongTonKho.Text);
 
-            _context.Thuocs.Add(thuoc);
-            _context.SaveChanges();
-            ShowThuoc();
+            await _context.Thuocs.AddAsync(thuoc);
+            await _context.SaveChangesAsync();
+            await ShowThuocAsync();
 
             MessageBox.Show("Thêm thuốc thành công!", "Thông báo", MessageBoxButtons.OK);
         }
 
-        private void dgvThuoc_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void btnSuaThuoc_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvThuoc.RowCount)
-            {
-                string ten = dgvThuoc.Rows[e.RowIndex].Cells[0].Value.ToString();
-                string mota = dgvThuoc.Rows[e.RowIndex].Cells[5].Value.ToString();
-                var maThuoc = _context.Thuocs.FirstOrDefault(x => x.TenThuoc == ten && x.MoTa == mota);
-                if (maThuoc != null)
-                {
-                    lblMaNhanVien.Text = maThuoc.Id.ToString();
-                }
-                txtTenThuoc.Text = dgvThuoc.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtDonViTinh.Text = dgvThuoc.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtGiaBan.Text = dgvThuoc.Rows[e.RowIndex].Cells[2].Value.ToString();
-                txtSoLuongTonKho.Text = dgvThuoc.Rows[e.RowIndex].Cells[3].Value.ToString();
-                dtpHanSuDung.Text = dgvThuoc.Rows[e.RowIndex].Cells[4].Value.ToString();
-                txtMoTa.Text = dgvThuoc.Rows[e.RowIndex].Cells[5].Value.ToString();
-                cbLoaiThuoc.Text = dgvThuoc.Rows[e.RowIndex].Cells[6].Value.ToString();
-                cbHangSanXuat.Text = dgvThuoc.Rows[e.RowIndex].Cells[7].Value.ToString();
-                cbNhaCungCap.Text = dgvThuoc.Rows[e.RowIndex].Cells[8].Value.ToString();
-            }
-        }
+            var suaThuoc = await _context.Thuocs.FirstOrDefaultAsync(x => x.Id == int.Parse(lblMaNhanVien.Text));
 
-        private void btnSuaThuoc_Click(object sender, EventArgs e)
-        {
-            var suaThuoc = _context.Thuocs.FirstOrDefault(x => x.Id == int.Parse(lblMaNhanVien.Text));
-
-            if (!ValidateTenDonViGMoTa())
-            {
-                return; // dừng lại nếu hàm false
-            }
-            if (!ValidateGiaTien(txtGiaBan.Text) || !ValidateSltk(txtSoLuongTonKho.Text))
+            if (suaThuoc == null || !ValidateTenDonViGMoTa() || !ValidateGiaTien(txtGiaBan.Text) || !ValidateSltk(txtSoLuongTonKho.Text))
             {
                 return;
             }
+
             SetThuoc(suaThuoc);
+
             if (MessageBox.Show("Bạn có chắc chắn muốn sửa thuốc?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 MessageBox.Show("Thành công!!", "Thông báo", MessageBoxButtons.OK);
-                ShowThuoc();
+                await ShowThuocAsync();
             }
-
         }
+
+        private async void btnXoaThuoc_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa thuốc", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                var xoaThuoc = await _context.Thuocs.FirstOrDefaultAsync(x => x.Id == int.Parse(lblMaNhanVien.Text));
+
+                if (xoaThuoc != null)
+                {
+                    _context.Thuocs.Remove(xoaThuoc);
+                    await _context.SaveChangesAsync();
+                    MessageBox.Show("Xóa thuốc thành công", "Thông báo", MessageBoxButtons.OK);
+                    await ShowThuocAsync();
+                }
+            }
+        }
+
         private void SetThuoc(Thuoc thuoc)
         {
             thuoc.TenThuoc = txtTenThuoc.Text;
@@ -214,18 +205,6 @@ namespace DuAnQuanLyHieuThuoc
             {
                 thuoc.SoLuongTonKho = int.Parse(txtSoLuongTonKho.Text);
             }
-        }
-
-        private void btnXoaThuoc_Click(object sender, EventArgs e)
-        {
-            if(MessageBox.Show("Bạn có chắc chắn muốn xóa thuốc","Thông báo",MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                var xoaThuoc = _context.Thuocs.FirstOrDefault(x => x.Id == int.Parse(lblMaNhanVien.Text));
-                _context.Thuocs.Remove(xoaThuoc);
-                _context.SaveChanges();
-                MessageBox.Show("Xóa thuốc thành công", "Thông báo", MessageBoxButtons.OK);
-                ShowThuoc();
-            }     
         }
     }
 }

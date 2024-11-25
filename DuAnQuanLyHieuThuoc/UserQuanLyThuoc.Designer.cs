@@ -78,7 +78,6 @@
             dgvThuoc.RowHeadersWidth = 82;
             dgvThuoc.Size = new Size(1331, 446);
             dgvThuoc.TabIndex = 32;
-            dgvThuoc.CellClick += dgvThuoc_CellClick;
             // 
             // label6
             // 

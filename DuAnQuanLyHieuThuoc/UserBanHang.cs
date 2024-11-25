@@ -22,11 +22,11 @@ namespace DuAnQuanLyHieuThuoc
             _context = new DataContext();
         }
 
-        private void UserBanHang_Load(object sender, EventArgs e)
+        private  async void UserBanHang_Load(object sender, EventArgs e)
         {
-            LoadDanhSachThuoc();
+            await LoadDanhSachThuoc();
         }
-        private void LoadDanhSachThuoc()
+        private async Task LoadDanhSachThuoc()
         {
             var thuoc = _context.Thuocs.Select(x => x.TenThuoc).ToList();
             lbThuoc.DataSource = thuoc;
@@ -97,7 +97,7 @@ namespace DuAnQuanLyHieuThuoc
             }
 
         }
-        //dinh nghia gio hang
+        //dinh nghia gio hanggggg
         public class CartItem
         {
             public string TenThuoc { get; set; }

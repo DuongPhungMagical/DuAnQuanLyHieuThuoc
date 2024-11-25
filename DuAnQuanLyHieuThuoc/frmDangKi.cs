@@ -25,10 +25,10 @@ namespace DuAnQuanLyHieuThuoc
         private Color placeholderColor = Color.Gray;
         private Color textColor = Color.Black;
 
-        private void frmDangKi_Load(object sender, EventArgs e)
+        private async void frmDangKi_Load(object sender, EventArgs e)
         {
             SetPlaceholder();
-            SetVaiTro();
+            await SetVaiTroAsync();
         }
 
 
@@ -54,7 +54,7 @@ namespace DuAnQuanLyHieuThuoc
                 SetPlaceholder();
             }
         }
-        private void SetVaiTro()
+        private async Task SetVaiTroAsync()
         {
             var vaiTro = _context.VaiTros.ToList();
             cbVaiTro.DataSource = vaiTro;
@@ -62,7 +62,7 @@ namespace DuAnQuanLyHieuThuoc
             cbVaiTro.ValueMember = "Id";
         }
 
-        private void btnDangKi_Click_1(object sender, EventArgs e)
+        private async void btnDangKi_Click_1(object sender, EventArgs e)
         {
             if (txtTaiKhoan.Text == "" || txtMatKhau.Text == "" || txtXacNhan.Text == "")
             {
@@ -83,7 +83,7 @@ namespace DuAnQuanLyHieuThuoc
             MessageBox.Show("Đăng kí thành công", "Thông báo", MessageBoxButtons.OK);
            
             _context.Add(tk);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             frmDangNhap dangNhap = new frmDangNhap();
             dangNhap.Show();

@@ -1,13 +1,9 @@
 ﻿using DuAnQuanLyHieuThuoc.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,21 +12,22 @@ namespace DuAnQuanLyHieuThuoc
     public partial class UserQuanLyKhachHang : UserControl
     {
         private readonly DataContext _context;
+
         public UserQuanLyKhachHang()
         {
             InitializeComponent();
             _context = new DataContext();
         }
 
-        private void UserQuanLyKhachHang_Load(object sender, EventArgs e)
+        private async void UserQuanLyKhachHang_Load(object sender, EventArgs e)
         {
             SetPlaceHolder();
-            ShowKhachHang();
+            await ShowKhachHangAsync();
         }
 
-        private void ShowKhachHang()
+        private async Task ShowKhachHangAsync()
         {
-            var show = _context.KhachHangs.ToList();
+            var show = await _context.KhachHangs.ToListAsync();
             var show1 = show.Select((x, index) => new
             {
                 STT = index + 1,
@@ -46,6 +43,7 @@ namespace DuAnQuanLyHieuThuoc
         private string textPlaceholder = "Tìm kiếm khách hàng";
         private Color textColor = Color.Gray;
         private Color color2 = Color.Black;
+
         private void SetPlaceHolder()
         {
             txtTimKiem.Text = textPlaceholder;
@@ -68,6 +66,7 @@ namespace DuAnQuanLyHieuThuoc
                 txtTimKiem.ForeColor = Color.Black;
             }
         }
+
         private bool ValidateSDT(string sdt)
         {
             if (sdt.Length != 10 && !sdt.StartsWith("0"))
@@ -76,7 +75,7 @@ namespace DuAnQuanLyHieuThuoc
             }
             return sdt.All(char.IsDigit);
         }
-        //ham validate tuoi
+
         private bool ValidateTuoi(string tuoi)
         {
             if (int.TryParse(tuoi, out int result))
@@ -86,18 +85,18 @@ namespace DuAnQuanLyHieuThuoc
             return false;
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        private async void btnThem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn thêm nhân viên?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có chắc chắn muốn thêm khách hàng?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 // Kiểm tra từng điều kiện trước khi tiến hành thêm
                 if (!ValidateSDT(txtSDT.Text) || !ValidateTuoi(txtTuoi.Text))
                 {
-                    MessageBox.Show("Nhap sai du lieu", "", MessageBoxButtons.OK);
+                    MessageBox.Show("Nhập sai dữ liệu", "", MessageBoxButtons.OK);
                     return;
                 }
 
-                // Tạo đối tượng nhân viên mới sau khi đã xác minh dữ liệu
+                // Tạo đối tượng khách hàng mới sau khi đã xác minh dữ liệu
                 KhachHang khachHang = new KhachHang
                 {
                     TenKhachHang = txtTen.Text,
@@ -107,10 +106,10 @@ namespace DuAnQuanLyHieuThuoc
                 };
 
                 _context.Add(khachHang);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
 
-                MessageBox.Show("Thêm nhân viên thành công", "Thông báo", MessageBoxButtons.OK);
-                ShowKhachHang();
+                MessageBox.Show("Thêm khách hàng thành công", "Thông báo", MessageBoxButtons.OK);
+                await ShowKhachHangAsync();
             }
         }
 
@@ -154,7 +153,7 @@ namespace DuAnQuanLyHieuThuoc
                 await _context.SaveChangesAsync();
                 MessageBox.Show("Cập nhật thông tin khách hàng thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                ShowKhachHang();
+                await ShowKhachHangAsync();
             }
             catch (Exception ex)
             {
@@ -162,17 +161,19 @@ namespace DuAnQuanLyHieuThuoc
             }
         }
 
-        private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0 && e.RowIndex < dgvDanhSach.Rows.Count)
+            if (e.RowIndex >= 0 && e.RowIndex < dgvDanhSach.Rows.Count)
             {
                 string ten = dgvDanhSach.Rows[e.RowIndex].Cells[1].Value.ToString();
                 string sdt = dgvDanhSach.Rows[e.RowIndex].Cells[3].Value.ToString();
-                var ma = _context.KhachHangs.FirstOrDefault(x => x.TenKhachHang == ten && x.SoDienThoai == sdt);
+                var ma = await _context.KhachHangs.FirstOrDefaultAsync(x => x.TenKhachHang == ten && x.SoDienThoai == sdt);
+
                 txtTen.Text = dgvDanhSach.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txtSDT.Text = dgvDanhSach.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txtTuoi.Text = dgvDanhSach.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txtDiaChi.Text = dgvDanhSach.Rows[e.RowIndex].Cells[4].Value.ToString();
+
                 if (ma != null)
                 {
                     lblMa.Text = ma.Id.ToString();
@@ -182,11 +183,6 @@ namespace DuAnQuanLyHieuThuoc
                     lblMa.Text = "Không tìm thấy";
                 }
             }
-        }
-        public void ABC()
-        {
-         // dit me git
-            DataTable dt = new DataTable();
         }
     }
 }

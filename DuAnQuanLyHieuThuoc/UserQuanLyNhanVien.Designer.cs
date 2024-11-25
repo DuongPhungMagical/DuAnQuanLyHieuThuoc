@@ -227,7 +227,6 @@
             btnChoNghiViec.TabIndex = 43;
             btnChoNghiViec.Text = "Cho nghỉ việc";
             btnChoNghiViec.UseVisualStyleBackColor = true;
-            btnChoNghiViec.Click += btnChoNghiViec_Click;
             // 
             // btnThemNhanVien
             // 
