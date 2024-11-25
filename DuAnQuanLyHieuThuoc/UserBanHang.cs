@@ -97,7 +97,7 @@ namespace DuAnQuanLyHieuThuoc
             }
 
         }
-        //dinh nghia gio hang
+        //dinh nghia gio hanggggg
         public class CartItem
         {
             public string TenThuoc { get; set; }
