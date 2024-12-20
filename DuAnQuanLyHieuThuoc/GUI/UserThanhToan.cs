@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using DuAnQuanLyHieuThuoc.BUS;
+using DuAnQuanLyHieuThuoc.DAO;
+using DuAnQuanLyHieuThuoc.Models;
+using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -12,14 +15,17 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace DuAnQuanLyHieuThuoc
 {
     public partial class UserThanhToan : UserControl
     {
+        BUS_ThanhToan bThanhToan;
         public UserThanhToan()
         {
             InitializeComponent();
+            bThanhToan = new BUS_ThanhToan();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -76,6 +82,12 @@ namespace DuAnQuanLyHieuThuoc
 
         private void UserThanhToan_Load(object sender, EventArgs e)
         {
+            cbHinhThucThanhToan.Items.Add("Tiền mặt");
+            cbHinhThucThanhToan.Items.Add("Chuyển khoản");
+            TaoMa();
+        }
+        public void TaoMa()
+        {
             try
             {
                 using (WebClient client = new WebClient())
@@ -105,5 +117,24 @@ namespace DuAnQuanLyHieuThuoc
             txtSoTien.Text = soTien.ToString();
         }
 
+        private void btnXuatHoaDon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var hoaDon = new HoaDon
+                {
+                    NgayLap = DateTime.Now,
+                    HinhThucThanhToan = cbHinhThucThanhToan.Text,
+                    TrangThai = "Đã thanh toán",
+                    TongTien = double.Parse(txtSoTien.Text),
+                    //IdNhanVien = 
+                };
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

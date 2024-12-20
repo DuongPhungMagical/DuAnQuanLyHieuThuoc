@@ -44,9 +44,9 @@
             label6 = new Label();
             label7 = new Label();
             dataGridView1 = new DataGridView();
-            button1 = new Button();
+            btnThem = new Button();
             btnXoa = new Button();
-            bntTaoHoaDon = new Button();
+            btnThanhToan = new Button();
             label8 = new Label();
             txtSoLuong = new TextBox();
             txtSDT = new TextBox();
@@ -214,21 +214,20 @@
             dataGridView1.RowHeadersWidth = 82;
             dataGridView1.Size = new Size(1389, 674);
             dataGridView1.TabIndex = 15;
-            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
-            // button1
+            // btnThem
             // 
-            button1.BackColor = Color.DodgerBlue;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Arial", 9F, FontStyle.Bold);
-            button1.Location = new Point(1576, 428);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(194, 49);
-            button1.TabIndex = 16;
-            button1.Text = "Thêm vào giỏ hàng";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnThem.BackColor = Color.DodgerBlue;
+            btnThem.FlatStyle = FlatStyle.Popup;
+            btnThem.Font = new Font("Arial", 9F, FontStyle.Bold);
+            btnThem.Location = new Point(1576, 428);
+            btnThem.Margin = new Padding(2);
+            btnThem.Name = "btnThem";
+            btnThem.Size = new Size(194, 49);
+            btnThem.TabIndex = 16;
+            btnThem.Text = "Thêm vào giỏ hàng";
+            btnThem.UseVisualStyleBackColor = false;
+            btnThem.Click += btnThem_Click;
             // 
             // btnXoa
             // 
@@ -242,21 +241,20 @@
             btnXoa.TabIndex = 17;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = false;
-            btnXoa.Click += btnXoa_Click;
             // 
-            // bntTaoHoaDon
+            // btnThanhToan
             // 
-            bntTaoHoaDon.BackColor = Color.DodgerBlue;
-            bntTaoHoaDon.FlatStyle = FlatStyle.Popup;
-            bntTaoHoaDon.Font = new Font("Arial", 9F, FontStyle.Bold);
-            bntTaoHoaDon.Location = new Point(1576, 1180);
-            bntTaoHoaDon.Margin = new Padding(2);
-            bntTaoHoaDon.Name = "bntTaoHoaDon";
-            bntTaoHoaDon.Size = new Size(194, 51);
-            bntTaoHoaDon.TabIndex = 18;
-            bntTaoHoaDon.Text = "Thanh toán";
-            bntTaoHoaDon.UseVisualStyleBackColor = false;
-            bntTaoHoaDon.Click += bntTaoHoaDon_Click;
+            btnThanhToan.BackColor = Color.DodgerBlue;
+            btnThanhToan.FlatStyle = FlatStyle.Popup;
+            btnThanhToan.Font = new Font("Arial", 9F, FontStyle.Bold);
+            btnThanhToan.Location = new Point(1576, 1180);
+            btnThanhToan.Margin = new Padding(2);
+            btnThanhToan.Name = "btnThanhToan";
+            btnThanhToan.Size = new Size(194, 51);
+            btnThanhToan.TabIndex = 18;
+            btnThanhToan.Text = "Thanh toán";
+            btnThanhToan.UseVisualStyleBackColor = false;
+            btnThanhToan.Click += btnThanhToan_Click;
             // 
             // label8
             // 
@@ -285,7 +283,6 @@
             txtSDT.Name = "txtSDT";
             txtSDT.Size = new Size(365, 33);
             txtSDT.TabIndex = 21;
-            txtSDT.TextChanged += txtSDT_TextChanged;
             // 
             // label9
             // 
@@ -327,9 +324,9 @@
             Controls.Add(txtSDT);
             Controls.Add(txtSoLuong);
             Controls.Add(label8);
-            Controls.Add(bntTaoHoaDon);
+            Controls.Add(btnThanhToan);
             Controls.Add(btnXoa);
-            Controls.Add(button1);
+            Controls.Add(btnThem);
             Controls.Add(dataGridView1);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -373,9 +370,9 @@
         private Label label6;
         private Label label7;
         private DataGridView dataGridView1;
-        private Button button1;
+        private Button btnThem;
         private Button btnXoa;
-        private Button bntTaoHoaDon;
+        private Button btnThanhToan;
         private Label label8;
         private TextBox txtSoLuong;
         private TextBox txtSDT;

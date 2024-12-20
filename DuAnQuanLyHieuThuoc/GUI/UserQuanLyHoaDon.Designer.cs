@@ -60,7 +60,7 @@
             label8.Location = new Point(157, 423);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(195, 24);
+            label8.Size = new Size(238, 29);
             label8.TabIndex = 33;
             label8.Text = "Danh sách hóa đơn";
             // 
@@ -81,7 +81,7 @@
             label7.Location = new Point(822, 326);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(134, 24);
+            label7.Size = new Size(166, 29);
             label7.TabIndex = 31;
             label7.Text = "Số điện thoại";
             // 
@@ -92,7 +92,7 @@
             label6.Location = new Point(157, 317);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(109, 24);
+            label6.Size = new Size(132, 29);
             label6.TabIndex = 28;
             label6.Text = "Tình trạng";
             // 
@@ -103,7 +103,7 @@
             label5.Location = new Point(826, 118);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(269, 24);
+            label5.Size = new Size(329, 29);
             label5.TabIndex = 27;
             label5.Text = "Tên nhân viên lập hóa đơn ";
             // 
@@ -114,7 +114,7 @@
             label4.Location = new Point(157, 118);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(123, 24);
+            label4.Size = new Size(151, 29);
             label4.TabIndex = 26;
             label4.Text = "Mã hóa đơn";
             // 
@@ -125,7 +125,7 @@
             label3.Location = new Point(157, 216);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(92, 24);
+            label3.Size = new Size(113, 29);
             label3.TabIndex = 25;
             label3.Text = "Ngày lập";
             // 
@@ -136,7 +136,7 @@
             label2.Location = new Point(826, 225);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(162, 24);
+            label2.Size = new Size(197, 29);
             label2.TabIndex = 24;
             label2.Text = "Tên khách hàng";
             // 
@@ -147,7 +147,7 @@
             label1.Location = new Point(61, 43);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(205, 29);
+            label1.Size = new Size(238, 33);
             label1.TabIndex = 23;
             label1.Text = "Quản lý hóa đơn";
             // 
@@ -157,7 +157,7 @@
             dateTimePicker1.Location = new Point(157, 254);
             dateTimePicker1.Margin = new Padding(4, 3, 4, 3);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(523, 43);
+            dateTimePicker1.Size = new Size(523, 51);
             dateTimePicker1.TabIndex = 22;
             // 
             // textBox6
@@ -166,7 +166,7 @@
             textBox6.Location = new Point(822, 263);
             textBox6.Margin = new Padding(4, 3, 4, 3);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(512, 43);
+            textBox6.Size = new Size(512, 51);
             textBox6.TabIndex = 21;
             // 
             // textBox3
@@ -175,7 +175,7 @@
             textBox3.Location = new Point(826, 157);
             textBox3.Margin = new Padding(4, 3, 4, 3);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(508, 43);
+            textBox3.Size = new Size(508, 51);
             textBox3.TabIndex = 19;
             // 
             // textBox1
@@ -184,7 +184,7 @@
             textBox1.Location = new Point(157, 148);
             textBox1.Margin = new Padding(4, 3, 4, 3);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(527, 43);
+            textBox1.Size = new Size(527, 51);
             textBox1.TabIndex = 18;
             // 
             // textBox2
@@ -193,7 +193,7 @@
             textBox2.Location = new Point(822, 354);
             textBox2.Margin = new Padding(4, 3, 4, 3);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(512, 43);
+            textBox2.Size = new Size(512, 51);
             textBox2.TabIndex = 34;
             // 
             // button1
@@ -214,7 +214,7 @@
             comboBox1.Location = new Point(157, 345);
             comboBox1.Margin = new Padding(4, 3, 4, 3);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(527, 40);
+            comboBox1.Size = new Size(527, 45);
             comboBox1.TabIndex = 36;
             // 
             // button2
@@ -241,30 +241,33 @@
             // 
             // button4
             // 
+            button4.BackColor = Color.DodgerBlue;
             button4.Location = new Point(641, 991);
             button4.Name = "button4";
             button4.Size = new Size(180, 50);
             button4.TabIndex = 39;
             button4.Text = "Thêm hóa đơn";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
+            button5.BackColor = Color.DodgerBlue;
             button5.Location = new Point(1156, 991);
             button5.Name = "button5";
             button5.Size = new Size(178, 50);
             button5.TabIndex = 40;
             button5.Text = "Xóa hóa đơn";
-            button5.UseVisualStyleBackColor = true;
+            button5.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
+            button6.BackColor = Color.DodgerBlue;
             button6.Location = new Point(156, 991);
             button6.Name = "button6";
             button6.Size = new Size(178, 50);
             button6.TabIndex = 41;
             button6.Text = "Sửa hóa đơn";
-            button6.UseVisualStyleBackColor = true;
+            button6.UseVisualStyleBackColor = false;
             // 
             // txtTimKiem
             // 
@@ -272,14 +275,14 @@
             txtTimKiem.Location = new Point(1016, 420);
             txtTimKiem.Margin = new Padding(4, 3, 4, 3);
             txtTimKiem.Name = "txtTimKiem";
-            txtTimKiem.Size = new Size(318, 34);
+            txtTimKiem.Size = new Size(318, 39);
             txtTimKiem.TabIndex = 42;
             txtTimKiem.Click += textBox4_Click;
             txtTimKiem.Leave += txtTimKiem_Leave;
             // 
             // UserQuanLyHoaDon
             // 
-            AutoScaleDimensions = new SizeF(12F, 24F);
+            AutoScaleDimensions = new SizeF(15F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(txtTimKiem);
             Controls.Add(button6);

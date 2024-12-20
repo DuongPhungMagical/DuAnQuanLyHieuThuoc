@@ -42,8 +42,9 @@
             label5 = new Label();
             label6 = new Label();
             pictureBox1 = new PictureBox();
-            button2 = new Button();
+            btnXuatHoaDon = new Button();
             dataGridView1 = new DataGridView();
+            cbHinhThucThanhToan = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -191,15 +192,16 @@
             pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
             // 
-            // button2
+            // btnXuatHoaDon
             // 
-            button2.Location = new Point(998, 436);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(219, 55);
-            button2.TabIndex = 15;
-            button2.Text = "Xuất hóa đơn";
-            button2.UseVisualStyleBackColor = true;
+            btnXuatHoaDon.Location = new Point(998, 436);
+            btnXuatHoaDon.Margin = new Padding(2);
+            btnXuatHoaDon.Name = "btnXuatHoaDon";
+            btnXuatHoaDon.Size = new Size(219, 55);
+            btnXuatHoaDon.TabIndex = 15;
+            btnXuatHoaDon.Text = "Xuất hóa đơn";
+            btnXuatHoaDon.UseVisualStyleBackColor = true;
+            btnXuatHoaDon.Click += btnXuatHoaDon_Click;
             // 
             // dataGridView1
             // 
@@ -210,12 +212,21 @@
             dataGridView1.Size = new Size(1351, 601);
             dataGridView1.TabIndex = 16;
             // 
+            // cbHinhThucThanhToan
+            // 
+            cbHinhThucThanhToan.FormattingEnabled = true;
+            cbHinhThucThanhToan.Location = new Point(703, 384);
+            cbHinhThucThanhToan.Name = "cbHinhThucThanhToan";
+            cbHinhThucThanhToan.Size = new Size(188, 33);
+            cbHinhThucThanhToan.TabIndex = 17;
+            // 
             // UserThanhToan
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(cbHinhThucThanhToan);
             Controls.Add(dataGridView1);
-            Controls.Add(button2);
+            Controls.Add(btnXuatHoaDon);
             Controls.Add(pictureBox1);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -256,7 +267,8 @@
         private Label label5;
         private Label label6;
         private PictureBox pictureBox1;
-        private Button button2;
+        private Button btnXuatHoaDon;
         private DataGridView dataGridView1;
+        private ComboBox cbHinhThucThanhToan;
     }
 }

@@ -57,10 +57,10 @@
             panel1.Controls.Add(btnQuanLyNhapKho);
             panel1.Controls.Add(btnQuanLyKhachHang);
             panel1.Controls.Add(btnThongKe);
-            panel1.Location = new Point(-4, 1);
+            panel1.Location = new Point(-5, 1);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(316, 1071);
+            panel1.Size = new Size(395, 1339);
             panel1.TabIndex = 1;
             // 
             // label1
@@ -68,20 +68,20 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 16.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(255, 128, 0);
-            label1.Location = new Point(23, 157);
+            label1.Location = new Point(29, 196);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(285, 32);
+            label1.Size = new Size(336, 38);
             label1.TabIndex = 11;
             label1.Text = "Trang chủ nhân viên";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.icons8_employers_64;
-            pictureBox1.Location = new Point(18, 7);
+            pictureBox1.Location = new Point(22, 9);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(276, 141);
+            pictureBox1.Size = new Size(345, 176);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
@@ -91,10 +91,10 @@
             btnQuanLyNhanVien.FlatStyle = FlatStyle.Popup;
             btnQuanLyNhanVien.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnQuanLyNhanVien.ForeColor = SystemColors.ButtonHighlight;
-            btnQuanLyNhanVien.Location = new Point(5, 322);
+            btnQuanLyNhanVien.Location = new Point(6, 402);
             btnQuanLyNhanVien.Margin = new Padding(2);
             btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
-            btnQuanLyNhanVien.Size = new Size(311, 51);
+            btnQuanLyNhanVien.Size = new Size(389, 64);
             btnQuanLyNhanVien.TabIndex = 9;
             btnQuanLyNhanVien.Text = "Bán hàng";
             btnQuanLyNhanVien.UseVisualStyleBackColor = true;
@@ -105,10 +105,10 @@
             btnDoanhThu.FlatStyle = FlatStyle.Popup;
             btnDoanhThu.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnDoanhThu.ForeColor = SystemColors.ButtonHighlight;
-            btnDoanhThu.Location = new Point(5, 883);
+            btnDoanhThu.Location = new Point(6, 1104);
             btnDoanhThu.Margin = new Padding(2);
             btnDoanhThu.Name = "btnDoanhThu";
-            btnDoanhThu.Size = new Size(311, 51);
+            btnDoanhThu.Size = new Size(389, 64);
             btnDoanhThu.TabIndex = 4;
             btnDoanhThu.Text = "Doanh thu";
             btnDoanhThu.UseVisualStyleBackColor = true;
@@ -118,10 +118,10 @@
             btnQuanLyThuoc.FlatStyle = FlatStyle.Popup;
             btnQuanLyThuoc.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnQuanLyThuoc.ForeColor = SystemColors.ButtonHighlight;
-            btnQuanLyThuoc.Location = new Point(0, 408);
+            btnQuanLyThuoc.Location = new Point(0, 510);
             btnQuanLyThuoc.Margin = new Padding(2);
             btnQuanLyThuoc.Name = "btnQuanLyThuoc";
-            btnQuanLyThuoc.Size = new Size(311, 51);
+            btnQuanLyThuoc.Size = new Size(389, 64);
             btnQuanLyThuoc.TabIndex = 8;
             btnQuanLyThuoc.Text = "Quản lý khách hàng";
             btnQuanLyThuoc.UseVisualStyleBackColor = true;
@@ -132,10 +132,10 @@
             btnQuanLyVoucher.FlatStyle = FlatStyle.Popup;
             btnQuanLyVoucher.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnQuanLyVoucher.ForeColor = SystemColors.ButtonHighlight;
-            btnQuanLyVoucher.Location = new Point(3, 796);
+            btnQuanLyVoucher.Location = new Point(4, 995);
             btnQuanLyVoucher.Margin = new Padding(2);
             btnQuanLyVoucher.Name = "btnQuanLyVoucher";
-            btnQuanLyVoucher.Size = new Size(311, 51);
+            btnQuanLyVoucher.Size = new Size(389, 64);
             btnQuanLyVoucher.TabIndex = 3;
             btnQuanLyVoucher.Text = "Quản lý voucher";
             btnQuanLyVoucher.UseVisualStyleBackColor = true;
@@ -145,10 +145,10 @@
             btnQuanLyHoaDon.FlatStyle = FlatStyle.Popup;
             btnQuanLyHoaDon.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnQuanLyHoaDon.ForeColor = SystemColors.ButtonHighlight;
-            btnQuanLyHoaDon.Location = new Point(5, 509);
+            btnQuanLyHoaDon.Location = new Point(6, 636);
             btnQuanLyHoaDon.Margin = new Padding(2);
             btnQuanLyHoaDon.Name = "btnQuanLyHoaDon";
-            btnQuanLyHoaDon.Size = new Size(311, 51);
+            btnQuanLyHoaDon.Size = new Size(389, 64);
             btnQuanLyHoaDon.TabIndex = 7;
             btnQuanLyHoaDon.Text = "Tra cứu thuốc";
             btnQuanLyHoaDon.UseVisualStyleBackColor = true;
@@ -158,10 +158,10 @@
             btnQuanLyNhapKho.FlatStyle = FlatStyle.Popup;
             btnQuanLyNhapKho.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnQuanLyNhapKho.ForeColor = SystemColors.ButtonHighlight;
-            btnQuanLyNhapKho.Location = new Point(5, 601);
+            btnQuanLyNhapKho.Location = new Point(6, 751);
             btnQuanLyNhapKho.Margin = new Padding(2);
             btnQuanLyNhapKho.Name = "btnQuanLyNhapKho";
-            btnQuanLyNhapKho.Size = new Size(311, 51);
+            btnQuanLyNhapKho.Size = new Size(389, 64);
             btnQuanLyNhapKho.TabIndex = 6;
             btnQuanLyNhapKho.Text = "Quản lý đơn lý đặt hàng";
             btnQuanLyNhapKho.UseVisualStyleBackColor = true;
@@ -172,41 +172,42 @@
             btnQuanLyKhachHang.FlatStyle = FlatStyle.Popup;
             btnQuanLyKhachHang.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnQuanLyKhachHang.ForeColor = SystemColors.ButtonHighlight;
-            btnQuanLyKhachHang.Location = new Point(5, 701);
+            btnQuanLyKhachHang.Location = new Point(6, 876);
             btnQuanLyKhachHang.Margin = new Padding(2);
             btnQuanLyKhachHang.Name = "btnQuanLyKhachHang";
-            btnQuanLyKhachHang.Size = new Size(311, 51);
+            btnQuanLyKhachHang.Size = new Size(389, 64);
             btnQuanLyKhachHang.TabIndex = 1;
             btnQuanLyKhachHang.Text = "Quản lý khách hàng";
             btnQuanLyKhachHang.UseVisualStyleBackColor = true;
+            btnQuanLyKhachHang.Click += btnQuanLyKhachHang_Click;
             // 
             // btnThongKe
             // 
             btnThongKe.FlatStyle = FlatStyle.Popup;
             btnThongKe.Font = new Font("Arial", 12F, FontStyle.Bold);
             btnThongKe.ForeColor = SystemColors.ButtonHighlight;
-            btnThongKe.Location = new Point(0, 234);
+            btnThongKe.Location = new Point(0, 292);
             btnThongKe.Margin = new Padding(2);
             btnThongKe.Name = "btnThongKe";
-            btnThongKe.Size = new Size(311, 51);
+            btnThongKe.Size = new Size(389, 64);
             btnThongKe.TabIndex = 0;
             btnThongKe.Text = "Thống kê";
             btnThongKe.UseVisualStyleBackColor = true;
             // 
             // pnShow
             // 
-            pnShow.Location = new Point(312, 1);
+            pnShow.Location = new Point(390, 1);
             pnShow.Margin = new Padding(2);
             pnShow.Name = "pnShow";
-            pnShow.Size = new Size(1452, 1071);
+            pnShow.Size = new Size(1815, 1339);
             pnShow.TabIndex = 2;
             pnShow.Paint += pnShow_Paint;
             // 
             // frmTrangChuNhanVien
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1763, 1071);
+            ClientSize = new Size(2204, 1339);
             Controls.Add(pnShow);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;

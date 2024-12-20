@@ -42,5 +42,10 @@ namespace DuAnQuanLyHieuThuoc
         {
 
         }
+
+        private void btnQuanLyKhachHang_Click(object sender, EventArgs e)
+        {
+            ShowChucNang(new UserQuanLyKhachHang());
+        }
     }
 }
